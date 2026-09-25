@@ -8,7 +8,7 @@
 void listContacts(AddressBook *addressBook, int sortCriteria) 
 {
     // Sort contacts based on the choosen criteria
-    
+
 }
 
 void initialize(AddressBook *addressBook) {
@@ -26,7 +26,40 @@ void saveAndExit(AddressBook *addressBook) {
 
 void createContact(AddressBook *addressBook)
 {
-	/* Define the logic to create a Contacts */
+void createContact(AddressBook *addressBook)
+{
+    char name[50];
+    int i, count = 0;
+
+    printf("Enter the name: ");
+    scanf(" %[^\n]", name);
+
+    for(i = 0; name[i] != '\0'; i++)
+    {
+        if(name[i] != ' ')
+        {
+            count++;
+        }
+    }
+
+    if(count < 2)
+    {
+        printf("Error: Name must contain at least 2 characters\n");
+        return;
+    }
+
+    for(i = 0; name[i] != '\0'; i++)
+    {
+        if(!((name[i] >= 'A' && name[i] <= 'Z') ||
+             (name[i] >= 'a' && name[i] <= 'z') ||
+             name[i] == ' '))
+        {
+            printf("Error: Name must contain only alphabets and spaces\n");
+            return;
+        }
+    }
+    printf("Name is valid: %s\n", name);
+}
     
 }
 
