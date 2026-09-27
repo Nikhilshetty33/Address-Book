@@ -3,9 +3,9 @@
 #include <string.h>
 #include "contact.h"
 #include "file.h"
-#include "populate.h"
+//#include "populate.h"
 
-void listContacts(AddressBook *addressBook, int sortCriteria) 
+void listContacts(AddressBook *addressBook) 
 {
     // Sort contacts based on the choosen criteria
 
@@ -26,8 +26,6 @@ void saveAndExit(AddressBook *addressBook) {
 
 void createContact(AddressBook *addressBook)
 {
-void createContact(AddressBook *addressBook)
-{
     char name[50];
     int i, count = 0;
 
@@ -44,7 +42,7 @@ void createContact(AddressBook *addressBook)
 
     if(count < 2)
     {
-        printf("Error: Name must contain at least 2 characters\n");
+        printf("Name must contain at least 2 characters\n");
         return;
     }
 
@@ -54,28 +52,24 @@ void createContact(AddressBook *addressBook)
              (name[i] >= 'a' && name[i] <= 'z') ||
              name[i] == ' '))
         {
-            printf("Error: Name must contain only alphabets and spaces\n");
+            printf("Name must contain only alphabets and spaces\n");
             return;
         }
     }
     printf("Name is valid: %s\n", name);
 }
     
-}
 
 void searchContact(AddressBook *addressBook) 
 {
-    /* Define the logic for search */
+    //* Define the logic for search */
 }
-
 void editContact(AddressBook *addressBook)
 {
-	/* Define the logic for Editcontact */
-    
-}
-
+	//* Define the logic for Editcontact */
+}   
 void deleteContact(AddressBook *addressBook)
 {
-	/* Define the logic for deletecontact */
-   
-}
+	//* Define the logic for deletecontact */
+}  
+
