@@ -5,7 +5,6 @@
 #include "contact.h"
 #include "file.h"
 
-/* Validate name: alphanumeric characters and spaces */
 int validName(char name[])
 {
     int i, count = 0;
@@ -21,7 +20,6 @@ int validName(char name[])
     return count >= 2;
 }
 
-/* Validate phone: exactly 10 digits */
 int validPhone(char phone[])
 {
     int i;
@@ -38,7 +36,6 @@ int validPhone(char phone[])
     return 1;
 }
 
-/* Validate email */
 int validEmail(char email[])
 {
     int i, at = -1, atCount = 0;
@@ -68,14 +65,12 @@ int validEmail(char email[])
     if (strcmp(email + len - 4, ".com") != 0)
         return 0;
 
-    /* At least one character between @ and .com */
     if (at >= len - 5)
         return 0;
 
     return 1;
 }
 
-/* Check whether phone already exists */
 int phoneExists(AddressBook *addressBook, char phone[], int index)
 {
     int i;
@@ -90,7 +85,7 @@ int phoneExists(AddressBook *addressBook, char phone[], int index)
     return 0;
 }
 
-/* Check whether email already exists */
+
 int emailExists(AddressBook *addressBook, char email[], int index)
 {
     int i;
